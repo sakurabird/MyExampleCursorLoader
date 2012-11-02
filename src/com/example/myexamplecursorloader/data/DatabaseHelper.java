@@ -5,9 +5,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * old version TODO max 100 record process Place table query
- */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     //@formatter:off
@@ -18,13 +15,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     + PlaceManager.Place.KEY_PLACE + " TEXT,"
     + PlaceManager.Place.KEY_URL + " TEXT"
     + ")";
-
-     static final String[] COL_ARRAY = {
-        PlaceManager.Place.KEY_ID,
-        PlaceManager.Place.KEY_PLACE_ID,
-        PlaceManager.Place.KEY_PLACE,
-        PlaceManager.Place.KEY_URL
-    };
     //@formatter:on
     private static final String DROP_PLACE_TABLE_SQL = "DROP TABLE IF EXISTS "
             + PlaceManager.TABLE_PLACE;
