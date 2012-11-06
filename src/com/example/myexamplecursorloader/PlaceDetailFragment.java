@@ -56,7 +56,7 @@ public class PlaceDetailFragment extends Fragment implements
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
 
-        if (cursor == null) {
+        if (cursor.getCount() == 0) {
             mPlace = null;
             return;
         }

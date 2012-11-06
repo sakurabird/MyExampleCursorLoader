@@ -84,7 +84,7 @@ public class PlaceListFragment extends Fragment implements
 
         FragmentTransaction ft = getActivity().getSupportFragmentManager()
                 .beginTransaction();
-        ft.replace(R.id.LinearLayout01, fragment, "PlaceDetailFragment");
+        ft.add(R.id.LinearLayout01, fragment, "PlaceDetailFragment");
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         ft.addToBackStack(null);
         ft.commit();
@@ -111,7 +111,7 @@ public class PlaceListFragment extends Fragment implements
         if (old != null) {
             old.close();
         }
-        if (cursor == null) {
+        if (cursor.getCount() == 0) {
             mPlaces = null;
             return;
         }
